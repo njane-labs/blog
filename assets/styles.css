@@ -1,0 +1,12 @@
+.hero-alt {
+    .hero-img {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.5); // Adds a dark overlay for readability
+        padding: 50px;
+        border-radius: 10px;
+    }
+}

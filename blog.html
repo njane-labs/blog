@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selly Africa Blog Platform</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS (Compiled from SASS) -->
+    <link rel="stylesheet" href="assets/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Home / Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="https://via.placeholder.com/50x50" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+                Selly Africa
+            </a>
+    
+            <!-- Navbar Toggler (for mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Blog Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Blog
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="tech.html">Tech</a></li>
+                            <li><a class="dropdown-item" href="lifestyle.html">Lifestyle</a></li>
+                            <li><a class="dropdown-item" href="travel.html">Travel</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="all-posts.html">All Posts</a></li>
+                        </ul>
+                    </li>
+    
+                    <!-- About Us -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+    
+                    <!-- Contact Us -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+    
+                    <!-- Login -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+                 <!-- Get Started Button -->
+            <a href="get-started.html" class="btn btn-primary ms-lg-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modern Hero Section</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .hero-section {
+                height: 100vh;
+                background-image: url('https://via.placeholder.com/1600x900');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed; /* Optional for parallax effect */
+                position: relative;
+                color: white;
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            }
+    
+            .overlay {
+                background-color: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+    
+            .content {
+                position: relative;
+                z-index: 2;
+            }
+    
+            .btn-outline-light:hover {
+                background-color: white;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Hero Section -->
+        <section class="hero-section d-flex align-items-center">
+            <!-- Overlay -->
+            <div class="overlay"></div>
+    
+            <!-- Content -->
+            <div class="container text-center content">
+                <h1 class="display-4 fw-bold">Selly Africa</h1>
+                <p class="lead mb-4">Discover ideas, insights, and inspirations from our global community of bloggers.</p>
+    
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="get-started.html" class="btn btn-primary btn-lg px-5">Get Started</a>
+                    <a href="#explore" class="btn btn-outline-light btn-lg px-5">Explore Blog</a>
+                </div>
+            </div>
+        </section>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    
+    <!-- Blog Cards Section -->
+    <section class="container my-5">
+        <h2 class="mb-4 text-center">Latest Blog Posts</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Exploring Web Development</h5>
+                        <p class="card-text">Learn about the latest trends and tools in web development.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-user"></i> John Doe</small>
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> Oct 22, 2024</small>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-primary">Web</span>
+                            <span class="badge bg-secondary">Development</span>
+                        </div>
+                        <div class="interaction-icons">
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-thumbs-up"></i></a>
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-comment"></i></a>
+                            <a href="#" class="text-secondary"><i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Blog Cards -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">The Future of AI</h5>
+                        <p class="card-text">Discover how AI is shaping the future of technology.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-user"></i> Jane Smith</small>
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> Oct 21, 2024</small>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-success">AI</span>
+                            <span class="badge bg-warning text-dark">Innovation</span>
+                        </div>
+                        <div class="interaction-icons">
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-thumbs-up"></i></a>
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-comment"></i></a>
+                            <a href="#" class="text-secondary"><i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Traveling the World</h5>
+                        <p class="card-text">A guide to the best travel destinations in 2024.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-user"></i> Sarah Lee</small>
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> Oct 20, 2024</small>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-info">Travel</span>
+                            <span class="badge bg-danger">Adventure</span>
+                        </div>
+                        <div class="interaction-icons">
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-thumbs-up"></i></a>
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-comment"></i></a>
+                            <a href="#" class="text-secondary"><i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">The Future of AI</h5>
+                        <p class="card-text">Discover how AI is shaping the future of technology.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-user"></i> Jane Smith</small>
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> Oct 21, 2024</small>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-success">AI</span>
+                            <span class="badge bg-warning text-dark">Innovation</span>
+                        </div>
+                        <div class="interaction-icons">
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-thumbs-up"></i></a>
+                            <a href="#" class="text-secondary me-3"><i class="fas fa-comment"></i></a>
+                            <a href="#" class="text-secondary"><i class="fas fa-share"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">The Future of AI</h5>
+                        <p class="card-text">Discover how AI is shaping the future of technology.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-user"></i> Jane Smith</small>
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> Oct 21, 2024</small>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-success">AI</span>
+                            <span class="badge bg-warning text-dark">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">The Future of AI</h5>
+                        <p class="card-text">Discover how AI is shaping the future of technology.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-user"></i> Jane Smith</small>
+                            <small class="text-muted"><i class="fas fa-calendar-alt"></i> Oct 21, 2024</small>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-success">AI</span>
+                            <span class="badge bg-warning text-dark">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: sellyafrica@blog.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Blog Street, City, Country</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Home</a></li>
+                        <li><a href="about.html" class="text-light">About Us</a></li>
+                        <li><a href="tech.html" class="text-light">Tech Blog</a></li>
+                        <li><a href="lifestyle.html" class="text-light">Lifestyle Blog</a></li>
+                        <li><a href="travel.html" class="text-light">Travel Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Stay Connected</h5>
+                    <ul class="list-unstyled d-flex">
+                        <li class="me-3"><a href="#" class="text-light"><i class="fab fa-facebook"></i></a></li>
+                        <li class="me-3"><a href="#" class="text-light"><i class="fab fa-twitter"></i></a></li>
+                        <li class="me-3"><a href="#" class="text-light"><i class="fab fa-instagram"></i></a></li>
+                        <li class="me-3"><a href="#" class="text-light"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                    <h5>Subscribe to Our Newsletter</h5>
+                    <form class="mt-2">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3">
+            <p>&copy; 2024 Sellyfrica. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+ 
+    
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
