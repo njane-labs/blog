@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Blog</title>
+  <!-- TinyMCE Script -->
+  <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
+</head>
+<body>
+
+  <h1>Create New Blog Post</h1>
+  <form action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    
+    <!-- <label for="title">Title:</label>
+    <input type="text" name="title" placeholder="Enter blog title" required>
+
+    <label for="description">Description:</label>
+    <textarea id="blogDescription" name="description"></textarea>
+
+    <label for="author">Author's Name:</label>
+    <input type="text" name="author" placeholder="Enter author name" required>
+
+    <label for="status">Status:</label>
+    <select name="status">
+      <option value="draft">Save as Draft</option>
+      <option value="published">Publish</option>
+    </select>-->
+
+    <button type="submit">Save Blog</button> 
+  </form>
+
+  <!-- TinyMCE Initialization Script -->
+  <!-- <script>
+    tinymce.init({
+      selector: '#blogDescription', // Target the textarea by ID
+      plugins: 'lists link image preview',
+      toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview',
+      menubar: false,
+      branding: false,
+    });
+  </script> -->
+
+</body>
+</html>

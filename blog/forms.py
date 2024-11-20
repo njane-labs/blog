@@ -1,57 +1,36 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from django import forms
+from .models import BlogPost
+from tinymce.widgets import TinyMCE
 from django.contrib.auth.forms import AuthenticationForm
-from django.core.validators import RegexValidator
 from blog import views
-from User.models import CustomUser
+from users.models import CustomUser
 
 
 class CustomUserCreationForm(UserCreationForm):
-    # Add custom validation for phone number
-    phone_regex = RegexValidator(
-        regex=r'^\+?1?\d{9,15}$',
-        message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."
-    )
-    
-    # Define form fields
-    username = forms.CharField(
-        max_length=150,
-        help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.',
-        widget=forms.TextInput(attrs={'class': 'form-control'})
-    )
-    email = forms.EmailField(
-        max_length=254,
-        help_text='Required. Enter a valid email address.',
-        widget=forms.EmailInput(attrs={'class': 'form-control'})
-    )
-    phone = forms.CharField(
-        validators=[phone_regex],
-        max_length=20,
-        help_text='Enter a valid phone number.',
-        widget=forms.TextInput(attrs={'class': 'form-control'})
-    )
-    password1 = forms.CharField(
-        label='Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
-        help_text='Your password must contain at least 8 characters.'
-    )
-    confirmpassword = forms.CharField(
-        label='Password confirmation',
-        widget=forms.PasswordInput(attrs={'class': 'form-control'}),
-        help_text='Enter the same password as above, for verification.'
-    )
-
+    """
+    Form for creating new users
+    """
     class Meta:
         model = CustomUser
-        fields = ('username', 'email', 'phone', 'password', 'confirmpassword')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
+        
+    def clean_email(self):
+        """
+        Validate unique email
+        """
+        email = self.cleaned_data.get('email')
+        if CustomUser.objects.filter(email=email).exists():
+            raise forms.ValidationError("Email already exists")
+        return email
 
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.email = self.cleaned_data['email']
-        user.phone = self.cleaned_data['phone']
-        if commit:
-            user.save()
-        return user
+class CustomUserChangeForm(UserChangeForm):
+    """
+    Form for updating user information
+    """
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'email', 'first_name', 'last_name', 'is_active')
         
 
 class CustomLoginForm(AuthenticationForm):
@@ -68,3 +47,35 @@ class CustomLoginForm(AuthenticationForm):
         })
     )
 
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = BlogPost
+        fields = ['title',  'content', 
+        ]
+
+
+class BlogPostForm(forms.ModelForm):
+    content = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+    
+    class Meta:
+        model = BlogPost
+        fields = ['title', 'content', 'cover_image', 'tags']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'tags': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter tags separated by commas'}),
+        }
+
+# @login_required
+def create_blog_post(request):
+    if request.method == 'POST':
+        form = BlogPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            blog_post = form.save(commit=False)
+            blog_post.author = request.user
+            blog_post.save()
+            messages.success(request, 'Blog post created successfully!')
+            return redirect('blog_detail', slug=blog_post.slug)
+    else:
+        form = BlogPostForm()
+    
+    return render(request, 'blog/create_post.html', {'form': form})
